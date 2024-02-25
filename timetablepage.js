@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //   window.closePopup();
 // }; 
 
-const closeSidebar = () => {
+window.closeSidebar = () => {
   const s = document.querySelector(':root');
   s.style.setProperty("--width", "0vw");
   s.style.setProperty("--margin", "25vw");
@@ -99,7 +99,7 @@ const closeSidebar = () => {
   s.style.setProperty("--rotate", "0deg");
 }
 
-const openSidebar = () => {
+window.openSidebar = () => {
   const s = document.querySelector(':root');
   s.style.setProperty("--width", "20vw");
   s.style.setProperty("--margin", "35vw");
@@ -110,8 +110,8 @@ const openSidebar = () => {
   s.style.setProperty("--rotate", "180deg");
 }
 
-var timesClicked = 0;
-const sidebar = () => {
+window.timesClicked = 0;
+window.sidebar = () => {
   timesClicked++;
   if (timesClicked % 2 == 0) {
     openSidebar()
@@ -121,7 +121,7 @@ const sidebar = () => {
   }
 }
 
-const printDiv = () => {
+window.printDiv = () => {
   var divContents = quill.root.innerHTML;
   var a = window.open('', '', 'height=500, width=500');
   a.document.write(divContents);
