@@ -37,22 +37,28 @@
   </div>
   <div class="timeTableCont">
     <div id='calendar'></div>
-      <div id="event-popup-view">
-        <input id="titleInput" type="text">
-        <input id="color" type="color">
-        <div>
-          <input id="startDate" type="date"><input id="startTime" type="time">
-          to
-          <input id="endDate" type="date"><input id="endTime" type="time">
+    <div id="event-popup-view">
+      <div class="headCont">
+        <input id="titleInput" type="text" title="Rename" placeholder="Notes title">
+        <div class="detailCont">
+          <input id="color" type="color">
+          <div class="datesCont">
+            <div><input class="dates" id="startDate" type="date"><input class="dates" id="startTime" type="time"></div>
+            To
+            <div><input class="dates" id="endDate" type="date"><input class="dates" id="endTime" type="time"></div>
+          </div>
         </div>
+      </div>
 
-        <div class="editorCont">
-          <div id="editor"></div>
-        </div>
+      <div class="editorCont">
+        <div id="editor"></div>
+      </div>
+      <div class="eventOptions">
         <button id="validate" onclick="validate()">Save</button>
         <button id="delete" onclick="deleteEvent()">Delete</button>
         <button id="cancel" onclick="closePopup()">Cancel</button>
       </div>
+    </div>
   </div>
 </body>
 

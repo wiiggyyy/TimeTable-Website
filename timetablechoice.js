@@ -3,5 +3,5 @@ function reDirect() {
   }
   
   function reDirectTwo() {
-    window.location.href = "./timetablepage.html";
+    window.location.href = "./index.html";
   }

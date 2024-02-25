@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("event-popup-view").style.display = "flex";
 
         popup.querySelector("#titleInput").value = info.event.title;
-        popup.querySelector("#contentInput").value = info.event.extendedProps.content;
+        quill.root.innerHTML = info.event.extendedProps.content;
 
         popup.querySelector("#startDate").value = info.event.start.toISOString().split('T')[0];
         popup.querySelector("#startTime").value = info.event.start.toISOString().split('T')[1].split(':')[0] + ':' + info.event.start.toISOString().split('T')[1].split(':')[1];
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.validate = () => {
     var title = document.getElementById("titleInput").value; //Read Values of fields here
-    var content = document.getElementById("contentInput").value;
+    var content = quill.root.innerHTML;
     var startDate = document.getElementById("startDate").value;
     var endDate = document.getElementById("endDate").value;
     var startTime = document.getElementById("startTime").value;
@@ -94,7 +94,7 @@ var quill = new Quill('#editor', {
 window.closeSidebar = () => {
   const s = document.querySelector(':root');
   s.style.setProperty("--width", "0vw");
-  s.style.setProperty("--margin", "25vw");
+  s.style.setProperty("--margin", "-10vw");
   s.style.setProperty("--display", "none");
   s.style.setProperty("--moveX", "-2.5vw");
   s.style.setProperty("--opacity", "0");
@@ -105,7 +105,7 @@ window.closeSidebar = () => {
 window.openSidebar = () => {
   const s = document.querySelector(':root');
   s.style.setProperty("--width", "20vw");
-  s.style.setProperty("--margin", "35vw");
+  s.style.setProperty("--margin", "0vw");
   s.style.setProperty("--display", "flex");
   s.style.setProperty("--moveX", "0");
   s.style.setProperty("--opacity", "1");

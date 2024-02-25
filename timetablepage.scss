@@ -1,6 +1,6 @@
 :root {
   --width: 20vw;
-  --margin: 35vw;
+  --margin: 0vw;
   --display: flex;
   --rotate: 180deg;
   --moveX: 0vw;
@@ -133,7 +133,6 @@ body {
   height: 80vh;
   margin-top: 10vh;
   margin-left: 30vw;
-  // background: red;
 
   :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -243,6 +242,9 @@ body {
 
 #calendar {
   height: 100%;
+  margin-left: var(--margin);
+  transition: 0.5s;
+  width:100%;
 }
 
 #event-popup-view {
@@ -254,18 +256,94 @@ body {
   position: absolute;
   display: none;
   flex-direction: column;
+  margin-left: var(--margin);
+  transition: 0.5s;
 }
 
+.headCont {
+  height: 100px;
+  display: flex;
+  border: 2px #d5d5d5 solid;
+  border-bottom: none;
+  #titleInput {
+    display: flex;
+    font-size: 1.5vw;
+    padding: 50px;
+    border: none;
+  }
+  #titleInput:focus {
+    border: none;
+    outline: none;
+  }
+  .detailCont{
+    top: 25px;
+    right: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    #color {
+      position: absolute;
+      right: 11vw;
+      top: 0.75vw;
+    }
+    .datesCont{
+      font-style: italic;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: #4966f5;
+      font-size: 0.75vw;
+      .dates {
+        padding-top: 2px;
+        width: 95px;
+        font-style: italic;
+        font-family: 'Inter', sans-serif;
+        border-radius: 0.4vw;
+        margin-left: 0.1vw;
+        border: none;
+        background: #4966f5;
+        color: #fff;
+        transition: 0.25s;
+      }
+      .dates:hover {
+        background: #5a73f2;
+      }
+    }
+  }
+}
+
+
 .editorCont {
-  width: 50vw;
+  width: 100%;
   transition: 0.5s;
 }
 
 #editor {
-  height: 80vh;
-  margin-top: 5vh;
-  box-shadow: -9px 9px 51px -11px rgba(0,0,0,0.4);
+  height: 65vh;
   overflow-y: auto;
   font-size: 1.25vw;
-  padding: 1.5vw;
+}
+
+.eventOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  #validate {
+    background: #4966f5;
+  }
+  #cancel {
+    background: #cccccc;
+  }
+  #delete {
+    background: #d13d3d;
+  }
+  button {
+    border-radius: 0vw;
+    width: 20vw;
+    transition: 0.25s;
+  }
+  button:hover {
+    border: solid 1px #000000;
+  }
 }
