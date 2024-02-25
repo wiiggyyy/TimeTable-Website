@@ -1,48 +1,6 @@
 import './timetablepage.scss';
 import { v4 as uuidv4 } from 'uuid';
 
-closeSidebar = () => {
-  const s = document.querySelector(':root');
-  s.style.setProperty("--width", "0vw");
-  s.style.setProperty("--margin", "25vw");
-  s.style.setProperty("--display", "none");
-  s.style.setProperty("--moveX", "-2.5vw");
-  s.style.setProperty("--opacity", "0");
-  s.style.setProperty("--moveXTwo", "-2.25vw");
-  s.style.setProperty("--rotate", "0deg");
-}
-
-openSidebar = () => {
-  const s = document.querySelector(':root');
-  s.style.setProperty("--width", "20vw");
-  s.style.setProperty("--margin", "35vw");
-  s.style.setProperty("--display", "flex");
-  s.style.setProperty("--moveX", "0");
-  s.style.setProperty("--opacity", "1");
-  s.style.setProperty("--moveXTwo", "0vw");
-  s.style.setProperty("--rotate", "180deg");
-}
-
-var timesClicked = 0;
-sidebar = () => {
-  timesClicked++;
-  if (timesClicked % 2 == 0) {
-    openSidebar()
-  }
-  else {
-    closeSidebar()
-  }
-}
-
-function printDiv() {
-  var divContents = quill.root.innerHTML;
-  var a = window.open('', '', 'height=500, width=500');
-  a.document.write(divContents);
-  a.document.close();
-  a.print();
-}
-
-
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -136,3 +94,44 @@ window.onscroll = function () {
 document.getElementsByClassName("fc-scroller fc-scroller-liquid-absolute")[0].onscroll = function () {
   window.closePopup();
 }; 
+
+const closeSidebar = () => {
+  const s = document.querySelector(':root');
+  s.style.setProperty("--width", "0vw");
+  s.style.setProperty("--margin", "25vw");
+  s.style.setProperty("--display", "none");
+  s.style.setProperty("--moveX", "-2.5vw");
+  s.style.setProperty("--opacity", "0");
+  s.style.setProperty("--moveXTwo", "-2.25vw");
+  s.style.setProperty("--rotate", "0deg");
+}
+
+const openSidebar = () => {
+  const s = document.querySelector(':root');
+  s.style.setProperty("--width", "20vw");
+  s.style.setProperty("--margin", "35vw");
+  s.style.setProperty("--display", "flex");
+  s.style.setProperty("--moveX", "0");
+  s.style.setProperty("--opacity", "1");
+  s.style.setProperty("--moveXTwo", "0vw");
+  s.style.setProperty("--rotate", "180deg");
+}
+
+var timesClicked = 0;
+const sidebar = () => {
+  timesClicked++;
+  if (timesClicked % 2 == 0) {
+    openSidebar()
+  }
+  else {
+    closeSidebar()
+  }
+}
+
+const printDiv = () => {
+  var divContents = quill.root.innerHTML;
+  var a = window.open('', '', 'height=500, width=500');
+  a.document.write(divContents);
+  a.document.close();
+  a.print();
+}
