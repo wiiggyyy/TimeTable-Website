@@ -22,15 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.activePopup) {
         window.closePopup();
       } else {
-        var offsets = info.jsEvent.target.getBoundingClientRect();
-        var right = offsets.right;
-        var top = offsets.top;
-
         var popup = document.getElementById("event-popup-view");
         document.getElementById("event-popup-view").style.display = "flex";
-        popup.style.position = 'absolute'; // Ensure the element is positioned
-        popup.style.top = top + 'px';
-        popup.style.left = right + 'px';
 
         popup.querySelector("#titleInput").value = info.event.title;
         popup.querySelector("#contentInput").value = info.event.extendedProps.content;
@@ -85,15 +78,15 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 });
 
-window.onresize = function () {
-  window.closePopup();
-};
-window.onscroll = function () {
-  window.closePopup();
-};
-document.getElementsByClassName("fc-scroller fc-scroller-liquid-absolute")[0].onscroll = function () {
-  window.closePopup();
-}; 
+// window.onresize = function () {
+//   window.closePopup();
+// };
+// window.onscroll = function () {
+//   window.closePopup();
+// };
+// document.getElementsByClassName("fc-scroller fc-scroller-liquid-absolute")[0].onscroll = function () {
+//   window.closePopup();
+// }; 
 
 const closeSidebar = () => {
   const s = document.querySelector(':root');
