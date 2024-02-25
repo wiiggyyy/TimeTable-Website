@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="timetablepage.scss">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
   <script src="./timetablepage.js" type="module"></script>
   <link rel="stylesheet"
@@ -45,7 +46,9 @@
           <input id="endDate" type="date"><input id="endTime" type="time">
         </div>
 
-        <textarea id="contentInput" placeholder="Write something here"></textarea>
+        <div class="editorCont">
+          <div id="editor"></div>
+        </div>
         <button id="validate" onclick="validate()">Save</button>
         <button id="delete" onclick="deleteEvent()">Delete</button>
         <button id="cancel" onclick="closePopup()">Cancel</button>

@@ -211,6 +211,7 @@ body {
     font-weight: 500;
     font-family: inherit;
     background-color: #1a1a1a;
+    color: #fff;
     cursor: pointer;
     transition: border-color 0.25s;
   }
@@ -253,4 +254,18 @@ body {
   position: absolute;
   display: none;
   flex-direction: column;
+}
+
+.editorCont {
+  width: 50vw;
+  transition: 0.5s;
+}
+
+#editor {
+  height: 80vh;
+  margin-top: 5vh;
+  box-shadow: -9px 9px 51px -11px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  font-size: 1.25vw;
+  padding: 1.5vw;
 }

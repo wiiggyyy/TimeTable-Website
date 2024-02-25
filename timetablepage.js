@@ -1,5 +1,6 @@
 import './timetablepage.scss';
 import { v4 as uuidv4 } from 'uuid';
+import Quill from 'quill';
 
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
@@ -78,15 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 });
 
-// window.onresize = function () {
-//   window.closePopup();
-// };
-// window.onscroll = function () {
-//   window.closePopup();
-// };
-// document.getElementsByClassName("fc-scroller fc-scroller-liquid-absolute")[0].onscroll = function () {
-//   window.closePopup();
-// }; 
+var quill = new Quill('#editor', {
+  modules: {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ['bold', 'italic', 'underline'],
+      ['image', 'code-block']
+    ]
+  },
+  placeholder: 'Write notes here...',
+  theme: 'snow'
+});
 
 window.closeSidebar = () => {
   const s = document.querySelector(':root');
@@ -128,3 +131,4 @@ window.printDiv = () => {
   a.document.close();
   a.print();
 }
+
