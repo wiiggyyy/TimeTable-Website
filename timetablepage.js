@@ -2,10 +2,22 @@ import './timetablepage.scss';
 import { v4 as uuidv4 } from 'uuid';
 import Quill from 'quill';
 
+window.closePopUp = () => {
+  const s = document.querySelector(':root');
+  s.style.setProperty("--close", "none");
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'timeGridWeek',
+    firstDay: 1,
+    allDaySlot: false,
+    weekends: false,
+    scrollTime: "07:00:00",
+    slotMinTime: "07:00:00",
+    slotMaxTime: "17:00:00",
+    slotDuration: "00:20:00",
     events: JSON.parse(localStorage.getItem("calendarEvents")) || [],
     dateClick: function (info) {
       if (window.activePopup) {
@@ -41,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   calendar.render();
+
+  window.switchCalendar = () => {
+    calendar.setOption('weekends', true);
+    calendar.setOption('slotMaxTime', "18:00:00");
+    closePopUp()
+  }
 
   window.deleteEvent = () => { //Deletes the event then closes window
     calendar.getEventById(window.activePopup.event.id).remove();
@@ -130,5 +148,9 @@ window.printDiv = () => {
   a.document.write(divContents);
   a.document.close();
   a.print();
+}
+
+window.reDirectTwo = () => {
+  window.location.href = "./index.html";
 }
 

@@ -6,10 +6,96 @@
   --moveX: 0vw;
   --opacity: 1;
   --moveXTwo: 0vw;
+  --fc-today-bg-color: #f0f0ff;
+  --close: block;
 }
 
 body {
   font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.backgroundCont {
+  position: absolute;
+  display: var(--close);
+  z-index: 999999;
+  background: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  .material-symbols-outlined {
+    position: absolute;
+    top: 3vw;
+    left: 3vw;
+    cursor: pointer;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+}
+
+.optionCont {
+  background: #fff;
+  margin-left: 5vw;
+  margin-top: 15vh;
+  width: 90vw;
+  height: auto;
+  .titleCont {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .brand{
+      position: absolute;
+      top: 3vw;
+    }
+    h1 {
+      height: 5px;
+      font-size: 2vw;
+      span {
+        color: #4966F5;
+      }
+    }
+  }
+  .circlesCont {
+    width: 90vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .singleCont {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: inherit;
+      cursor: pointer;
+      transition: 0.2s;
+      .circle {
+        width: 270px;
+        height: 270px;
+        border-radius: 100%;
+        aspect-ratio: 1;
+        background: #4966F5;
+      }
+      h2 {
+        text-align: center;
+        width: 270px;
+        height: 10px;
+        font-size: 1.75vw;
+      }
+      p {
+        padding-top: 20px;
+        border-top: 8px solid #4966F5;
+        width: 270px;
+      }
+    }
+  }
+}
+.singleCont:hover {
+  transform: translateY(-15px);
 }
 
 .pageCont {
@@ -266,6 +352,7 @@ body {
   border: 2px #d5d5d5 solid;
   border-bottom: none;
   #titleInput {
+    font-weight: 600;
     display: flex;
     font-size: 1.5vw;
     padding: 50px;
@@ -276,15 +363,21 @@ body {
     outline: none;
   }
   .detailCont{
-    top: 25px;
+    top: 21px;
     right: 50px;
     position: absolute;
     display: flex;
     flex-direction: column;
     #color {
+      overflow: hidden;
       position: absolute;
       right: 11vw;
-      top: 0.75vw;
+      top: -0.25vw;
+      height: 75px;
+      width: 75px;
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
     .datesCont{
       font-style: italic;
@@ -294,7 +387,9 @@ body {
       color: #4966f5;
       font-size: 0.75vw;
       .dates {
-        padding-top: 2px;
+        cursor: pointer;
+        padding: 2px;
+        height: 20px;
         width: 95px;
         font-style: italic;
         font-family: 'Inter', sans-serif;
@@ -330,12 +425,15 @@ body {
   justify-content: space-evenly;
   flex-direction: row;
   #validate {
+    cursor: pointer;
     background: #4966f5;
   }
   #cancel {
+    cursor: pointer;
     background: #cccccc;
   }
   #delete {
+    cursor: pointer;
     background: #d13d3d;
   }
   button {
@@ -346,4 +444,22 @@ body {
   button:hover {
     border: solid 1px #000000;
   }
+}
+
+.fc .fc-col-header-cell-cushion {
+  color:#000;
+  font-weight: 600;
+}
+
+.fc .fc-button-primary{
+  background: #4966f5;
+}
+
+.fc .fc-button-primary:hover{
+  background: #5a73f2;
+}
+
+
+.fc .fc-button-primary:disabled{
+  background: #5a73f2;
 }

@@ -1,7 +1,7 @@
 const s = document.querySelector(':root');
 
 function reDirect() {
-  window.location.href = "./timetablechoice.html";
+  window.location.href = "./timetablepage.html";
 }
 
 function formValid() {
