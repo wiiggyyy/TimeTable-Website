@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
     },
-    eventClick: function (info) { //When event is clicked, open popup with relevant event data
+    eventClick: function (info) {
       if (window.activePopup) {
         window.closePopup();
       } else {
@@ -60,19 +60,19 @@ document.addEventListener('DOMContentLoaded', function () {
     closePopUp()
   }
 
-  window.deleteEvent = () => { //Deletes the event then closes window
+  window.deleteEvent = () => {
     calendar.getEventById(window.activePopup.event.id).remove();
     window.closePopup();
     localStorage.setItem("calendarEvents", JSON.stringify(calendar.getEvents()))
   };
 
-  window.closePopup = () => { //Hides popup
+  window.closePopup = () => { 
     document.getElementById("event-popup-view").style.display = "none";
     window.activePopup = null;
   };
 
   window.validate = () => {
-    var title = document.getElementById("titleInput").value; //Read Values of fields here
+    var title = document.getElementById("titleInput").value;
     var content = quill.root.innerHTML;
     var startDate = document.getElementById("startDate").value;
     var endDate = document.getElementById("endDate").value;
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var startDateTime = startDate + ' ' + startTime
     var endDateTime = endDate + ' ' + endTime
 
-    calendar.getEventById(window.activePopup.event.id).setProp("title", title); //Apply values to event here, all event data is recorded automatically, look at calendar js docs for reference
+    calendar.getEventById(window.activePopup.event.id).setProp("title", title);
     calendar.getEventById(window.activePopup.event.id).setExtendedProp("content", content);
 
     calendar.getEventById(window.activePopup.event.id).setStart(startDateTime);
