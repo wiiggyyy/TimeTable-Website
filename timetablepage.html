@@ -16,31 +16,35 @@
 <body>
   <div class="backgroundCont">
     <span class="material-symbols-outlined" onclick="reDirectTwo()" title="Home">home</span>
-        <div class="optionCont">
-          <div class="titleCont">
-            <h1 class="brand">Timely</h1>
-            <h1>Which timetable is best for <span>you</span>?</h1>
-            <p>(click an option to continue)<p>
-          </div>
-          <div class="circlesCont">
-             <div class="singleCont" onclick="closePopUp()">
-              <div class="circle"></div>
-              <h2>School TimeTable</h2>
-              <p>With a school timetable, you will be presented with the 5 day week to match the school days, aswell as the common school hours to reference lesson times.</p>
-            </div>
-            <div class="singleCont" onclick="switchCalendar()">
-              <div class="circle"></div>
-              <h2>Week TimeTable</h2>
-              <p>The week table presents you with all 7 days of the week, allowing you to plan ahead into the weekend aswell. It's matched with the 9-5 times to reflect a working day.</p>
-            </div>
-            <div class="singleCont" onclick="closePopUp()">
-              <div class="circle"></div>
-              <h2>Custom</h2>
-              <p>Feel as though you need something a bit more unique? The custom time table allows you to use your own weekdays and times, fitting to your needs.</p>
-            </div>
+    <div class="optionCont">
+      <div class="titleCont">
+        <h1 class="brand">Timely</h1>
+        <h1>Which timetable is best for <span>you</span>?</h1>
+        <p>(click an option to continue)
+        <p>
+      </div>
+      <div class="circlesCont">
+        <div class="singleCont" onclick="closePopUp()">
+          <div class="circle"></div>
+          <h2>School TimeTable</h2>
+          <p>With a school timetable, you will be presented with the 5 day week to match the school days, aswell as the
+            common school hours to reference lesson times.</p>
         </div>
+        <div class="singleCont" onclick="switchCalendar()">
+          <div class="circle"></div>
+          <h2>Week TimeTable</h2>
+          <p>The week table presents you with all 7 days of the week, allowing you to plan ahead into the weekend
+            aswell. It's matched with the 9-5 times to reflect a working day.</p>
         </div>
+        <div class="singleCont" onclick="closePopUp()">
+          <div class="circle"></div>
+          <h2>Custom</h2>
+          <p>Feel as though you need something a bit more unique? The custom time table allows you to use your own
+            weekdays and times, fitting to your needs.</p>
+        </div>
+      </div>
     </div>
+  </div>
   <div class="sidebar">
     <h1>Timely</h1>
     <div class="linkCont">
@@ -70,9 +74,11 @@
         <div class="detailCont">
           <input title="label color" id="color" type="color">
           <div class="datesCont">
-            <div><input title="Start Date" class="dates" id="startDate" type="date"><input title="Start Time" class="dates" id="startTime" type="time"></div>
+            <div><input title="Start Date" class="dates" id="startDate" type="date"><input title="Start Time"
+                class="dates" id="startTime" type="time"></div>
             To
-            <div><input title="End Date" class="dates" id="endDate" type="date"><input title="End Time" class="dates" id="endTime" type="time"></div>
+            <div><input title="End Date" class="dates" id="endDate" type="date"><input title="End Time" class="dates"
+                id="endTime" type="time"></div>
           </div>
         </div>
       </div>
